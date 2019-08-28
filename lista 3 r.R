@@ -23,12 +23,29 @@ e_primo <- function(k){
     return(T)
   for(n in 2:(k-1)){
     if(k%%n==0){
-      
+      return(F)
     }
   }
-  return(F)
+  return(T)
 }
-e_primo()
+e_primo(3)
+###
+n_primeiros_primos <- function(n){
+  cont=0
+  i = 1
+  primos= NULL
+  while(cont<n){
+    if(e_primo(i)){
+      primos = c(primos,i)
+      cont=cont+1
+    }
+    i=i+1
+  }
+  return(primos)
+}
+
+n_primeiros_primos(10)
+
 ###1
 
 menor <- function(a,b){
