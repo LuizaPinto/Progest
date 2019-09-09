@@ -11,7 +11,7 @@ maior=function(vet){
   return(maior)
 }
 
-maior(c(1,2,3))
+##
 
 m <- function(vet){
   maior <- vet[i]
@@ -27,4 +27,69 @@ m <- function(vet){
   return(maior)
   
 }
-m(c(6,8,9))
+
+##3
+media <- function(vet){
+  soma = 0
+  for (i in 1:length(vet)) {
+    soma= soma+vet[i]
+  }
+  return(soma/length(vet))
+}
+
+m
+##4
+mediana <- function(vet){
+  vet=sort(vet)
+  n= length(vet)
+  if(n%%2==0)
+    return((vet[n/2]+vet[(n/2)+1])/2)
+  
+  return(vet[(n+1)/2])
+  
+}
+
+mediana(c(7,8,9,10,11,12,13))
+
+##5
+quartilmo1 <- function(vet){
+  m= mediana(vet)
+  n= length(vet)
+  vet=sort(vet)
+  if(n%%2!=0){
+    k=((n+1)/2)-1
+    s=((n+1)/2)+1
+  }else{
+      k=n/2
+      s=(n/2)+1
+  }
+  w=vet[1:k]
+  u=vet[s:n]
+  q1=mediana(w)
+  q3=mediana(u)
+  return(c(q1,m,q3))
+}
+
+
+
+
+## modelo2
+
+quartilmo2<-function(vet){
+  m=mediana(vet)
+  n=length(vet)
+  vet=sort(vet)
+  if(n%%2!=0){
+    k=((n+1)/2)
+    s=((n+1)/2)
+  }else{
+    k=n/2
+    s=(n/2)
+  }
+  w=vet[1:k]
+  u=vet[s:n]
+  q1=mediana(w)
+  q3=mediana(u)
+  return(c(q1,m,q3))
+}  
+
